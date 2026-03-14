@@ -8,6 +8,7 @@ import Rewards      from './pages/Rewards'
 import Dashboard    from './pages/Dashboard'
 import Wheel        from './pages/Wheel'
 import Settings     from './pages/Settings'
+import { Analytics } from '@vercel/analytics/react';
 
 /** Redirect to /create-family if localStorage hasn't been initialised yet */
 function Ready({ children }: { children: React.ReactNode }) {
@@ -43,6 +44,8 @@ export default function App() {
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      {/* Vercel Analytics */}
+      <Analytics />
     </BrowserRouter>
   )
 }
