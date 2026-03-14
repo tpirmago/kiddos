@@ -109,7 +109,7 @@ export default function Settings() {
             <span className="text-3xl">💾</span>
             <div>
               <p className="font-bold leading-tight">Export family data</p>
-              <p className="text-xs text-purple-200 mt-0.5">Download kiddoquest-backup.json</p>
+              <p className="text-xs text-purple-200 mt-0.5">Download kiddos-backup.json</p>
             </div>
           </button>
 

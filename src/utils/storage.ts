@@ -1,7 +1,7 @@
 import type { AppData, Child, Chore, Reward, Progress, LastReward, RewardClaimedForWeek } from '../types/types'
 import { currentWeekDates, currentWeekStart, getDayOfWeek, getMondayOfWeek, today } from './dateUtils'
 
-const KEY = 'kiddoquest'
+const KEY = 'kiddos'
 
 const EMPTY: AppData = {
   children: [],
@@ -166,7 +166,7 @@ export function saveData(data: AppData): void {
   localStorage.setItem(KEY, JSON.stringify(data))
 }
 
-/** Create the kiddoquest key if it does not exist yet. */
+/** Create the kiddos key if it does not exist yet. */
 export function initFamily(): void {
   if (!localStorage.getItem(KEY)) saveData({ ...EMPTY })
 }
@@ -416,7 +416,7 @@ export function fillWeekForTesting(childId: string, weekDates: string[]): void {
 export function exportData(): void {
   const blob = new Blob([JSON.stringify(loadData(), null, 2)], { type: 'application/json' })
   const url  = URL.createObjectURL(blob)
-  const a    = Object.assign(document.createElement('a'), { href: url, download: 'kiddoquest-backup.json' })
+  const a    = Object.assign(document.createElement('a'), { href: url, download: 'kiddos-backup.json' })
   a.click()
   URL.revokeObjectURL(url)
 }
