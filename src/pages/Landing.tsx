@@ -17,7 +17,13 @@ export default function Landing() {
       {/* Header */}
       <header className="sticky top-0 z-10 bg-white border-b border-gray-100 shadow-sm">
         <div className="w-full max-w-[900px] mx-auto px-6 py-4 flex justify-between items-center">
-        <span className="text-2xl font-black text-[#6C63FF]">Kiddos</span>
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="text-2xl font-black text-[#6C63FF] hover:text-purple-600 transition-colors cursor-pointer"
+        >
+          Kiddos
+        </button>
         <button
           onClick={handleStart}
           className="bg-[#6C63FF] hover:bg-purple-600 text-white font-semibold px-5 py-2 rounded-xl text-sm transition-colors"
